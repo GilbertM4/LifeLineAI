@@ -13,21 +13,31 @@
   <!-- Header / Navigation -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo">
-        <span class="logo-mark"></span>
+      <!-- Clickable logo that goes “Home” -->
+      <a href="#" class="logo" data-page-target="home">
+        <svg class="logo-icon" viewBox="0 0 80 24" aria-hidden="true">
+          <polyline
+            points="2,12 14,12 20,4 26,18 32,8 38,12 78,12"
+            fill="none"
+            stroke="#f97373"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
         <span class="logo-text">Lifeline <span>Ai</span></span>
-      </div>
+      </a>
 
       <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#features">Features</a>
-        <a href="#plans">Plans</a>
-        <a href="#terms">Terms</a>
-        <a href="#contact">Contact</a>
+        <a href="#" class="nav-link active" data-page-target="home">Home</a>
+        <a href="#" class="nav-link" data-page-target="how">How it works</a>
+        <a href="#" class="nav-link" data-page-target="features">Features</a>
+        <a href="#" class="nav-link" data-page-target="plans">Plans</a>
+        <a href="#" class="nav-link" data-page-target="terms">Terms</a>
+        <a href="#" class="nav-link" data-page-target="contact">Contact</a>
       </nav>
 
-      <a href="#download" class="btn btn-primary">Download the App</a>
+      <a href="#" class="btn btn-primary" data-page-target="download">Download the App</a>
 
       <!-- Mobile menu button -->
       <button class="menu-toggle" aria-label="Toggle navigation">
@@ -36,9 +46,9 @@
     </div>
   </header>
 
-  <!-- HERO / HOME -->
   <main>
-    <section id="home" class="hero">
+    <!-- HOME PAGE -->
+    <section id="home" class="hero page active" data-page="home">
       <div class="container hero-grid">
         <div class="hero-copy">
           <h1>You don’t need a medic to save a life — just the right guide.</h1>
@@ -49,8 +59,8 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#download" class="btn btn-primary" id="hero-download-btn">Download the App</a>
-            <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
+            <a href="#" class="btn btn-primary" data-page-target="download">Download the App</a>
+            <a href="#" class="btn btn-ghost" data-page-target="how">See how it works</a>
           </div>
 
           <ul class="hero-benefits">
@@ -84,8 +94,8 @@
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section id="how-it-works" class="how-it-works">
+    <!-- HOW IT WORKS PAGE -->
+    <section id="how-it-works" class="how-it-works page" data-page="how">
       <div class="container how-grid">
         <div class="how-copy">
           <h2>See Lifeline Ai in action</h2>
@@ -106,7 +116,6 @@
               <button class="play-button" aria-label="Play demo video">▶</button>
             </div>
             <div class="video-image">
-              <!-- Simple visual stand-in for the Canva mock (hiker giving first aid) -->
               <div class="video-bg"></div>
               <p class="video-caption">Watch how Lifeline Ai walks you through CPR on the trail.</p>
             </div>
@@ -115,8 +124,8 @@
       </div>
     </section>
 
-    <!-- FEATURES -->
-    <section id="features" class="features">
+    <!-- FEATURES PAGE -->
+    <section id="features" class="features page" data-page="features">
       <div class="container">
         <h2>Features</h2>
         <div class="feature-grid">
@@ -147,8 +156,8 @@
       </div>
     </section>
 
-    <!-- PRICING / PLANS -->
-    <section id="plans" class="plans">
+    <!-- PLANS PAGE -->
+    <section id="plans" class="plans page" data-page="plans">
       <div class="container">
         <h2>Choose the Lifeline Ai plan that’s right for you</h2>
         <p class="section-subtitle">
@@ -161,9 +170,8 @@
         </div>
 
         <div class="plan-grid">
-          <!-- Free Plan -->
           <article class="plan-card">
-            <div class="plan-label plan-label-heart">Free Plan</div>
+            <div class="plan-label">Free Plan</div>
             <p class="plan-price">
               <span class="price-amount" data-plan="free" data-period="monthly">£0</span>
               <span class="price-period">GBP / month</span>
@@ -176,12 +184,11 @@
               <li>1 offline module</li>
               <li>Text-only feedback</li>
             </ul>
-            <button class="btn btn-secondary plan-cta" data-plan-name="Free Plan">
+            <button class="btn btn-secondary plan-cta" data-plan-name="Free Plan" data-page-target="contact">
               Get Started Free
             </button>
           </article>
 
-          <!-- Individual Plan -->
           <article class="plan-card">
             <div class="plan-label">Individual Plan</div>
             <p class="plan-price">
@@ -195,12 +202,11 @@
               <li>Full AI voice + visual guidance</li>
               <li>All offline modules</li>
             </ul>
-            <button class="btn btn-secondary plan-cta" data-plan-name="Individual Plan">
+            <button class="btn btn-secondary plan-cta" data-plan-name="Individual Plan" data-page-target="contact">
               Subscribe
             </button>
           </article>
 
-          <!-- Family Plan -->
           <article class="plan-card">
             <div class="plan-label">Family Plan</div>
             <p class="plan-price">
@@ -215,12 +221,11 @@
               <li>Shared emergency data</li>
               <li>Family dashboard</li>
             </ul>
-            <button class="btn btn-secondary plan-cta" data-plan-name="Family Plan">
+            <button class="btn btn-secondary plan-cta" data-plan-name="Family Plan" data-page-target="contact">
               Choose Plan
             </button>
           </article>
 
-          <!-- Premium Plan -->
           <article class="plan-card plan-card-featured">
             <div class="plan-ribbon">Recommended</div>
             <div class="plan-label">Premium Plan</div>
@@ -236,7 +241,7 @@
               <li>Early AI updates</li>
               <li>24/7 medical chat* (coming soon)</li>
             </ul>
-            <button class="btn btn-primary plan-cta" data-plan-name="Premium Plan">
+            <button class="btn btn-primary plan-cta" data-plan-name="Premium Plan" data-page-target="contact">
               Start Free Trial
             </button>
           </article>
@@ -248,8 +253,8 @@
       </div>
     </section>
 
-    <!-- TERMS -->
-    <section id="terms" class="terms">
+    <!-- TERMS PAGE -->
+    <section id="terms" class="terms page" data-page="terms">
       <div class="container terms-inner">
         <h2>Terms &amp; Conditions</h2>
         <p>Welcome to Lifeline Ai. Please review and accept our terms before continuing.</p>
@@ -271,15 +276,13 @@
           </li>
         </ol>
 
-        <a href="#full-terms" class="link">View Full Terms</a>
-
         <button class="btn btn-primary" id="accept-terms-btn">Accept &amp; Continue</button>
         <p class="terms-status" id="terms-status" aria-live="polite"></p>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
+    <!-- CONTACT PAGE -->
+    <section id="contact" class="contact page" data-page="contact">
       <div class="container contact-grid">
         <div class="contact-info">
           <h2>Get in touch with the Lifeline Ai team</h2>
@@ -340,8 +343,8 @@
       </div>
     </section>
 
-    <!-- DOWNLOAD CTA & FOOTER -->
-    <section id="download" class="download-cta">
+    <!-- DOWNLOAD PAGE -->
+    <section id="download" class="download-cta page" data-page="download">
       <div class="container download-grid">
         <div class="download-copy">
           <h2>Get Lifeline Ai — Your Pocket Paramedic</h2>
@@ -389,16 +392,13 @@
         <div class="container footer-inner">
           <span>© 2025 Lifeline Ai — All rights reserved</span>
           <div class="footer-links">
-            <a href="#terms">Terms</a>
-            <a href="#full-terms">Privacy</a>
+            <a href="#" data-page-target="terms">Terms</a>
+            <a href="#" data-page-target="terms">Privacy</a>
           </div>
         </div>
       </footer>
     </section>
   </main>
-
-  <!-- Simple hidden anchor target for “View Full Terms / Privacy” -->
-  <div id="full-terms" aria-hidden="true"></div>
 
   <!-- Video Modal -->
   <div class="modal" id="video-modal" aria-hidden="true">
@@ -406,7 +406,6 @@
     <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Lifeline Ai demo video">
       <button class="modal-close" id="video-modal-close" aria-label="Close video">×</button>
       <div class="modal-body">
-        <!-- Replace the src with your own YouTube/Vimeo link if you have one -->
         <div class="video-embed">
           <iframe
             id="demo-video"
@@ -424,3 +423,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
