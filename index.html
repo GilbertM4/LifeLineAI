@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lifeline Ai – First-Aid Guidance App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">Lifeline <span>Ai</span></span>
+      </div>
+
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#plans">Plans</a>
+        <a href="#terms">Terms</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#download" class="btn btn-primary">Download the App</a>
+
+      <!-- Mobile menu button -->
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO / HOME -->
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>You don’t need a medic to save a life — just the right guide.</h1>
+          <p>
+            Lifeline Ai is an AI-powered mobile app that uses your phone’s camera and on-device
+            analysis to guide you through medical emergencies with clear visual and voice
+            instructions — available offline for outdoor adventures.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary" id="hero-download-btn">Download the App</a>
+            <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
+          </div>
+
+          <ul class="hero-benefits">
+            <li><span class="check">✓</span> Medically informed — clinical review &amp; advisory</li>
+            <li><span class="check">✓</span> Offline modules for hiking, cycling and watersports</li>
+            <li><span class="check">✓</span> Secure &amp; private — GDPR-aligned data handling</li>
+          </ul>
+        </div>
+
+        <div class="hero-phone">
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="phone-step">1 • Analyzing emergency…</div>
+              <button class="phone-card phone-card-danger">
+                Call emergency services if the person is unresponsive
+              </button>
+              <button class="phone-card">
+                Control heavy bleeding — apply direct pressure
+              </button>
+              <button class="phone-card">
+                Immobilize suspected fractures
+              </button>
+              <button class="phone-card phone-card-ghost">
+                ▶ Play step-by-step voice guidance
+              </button>
+            </div>
+          </div>
+          <p class="hero-phone-caption">Live guidance • Offline-ready</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="how-it-works">
+      <div class="container how-grid">
+        <div class="how-copy">
+          <h2>See Lifeline Ai in action</h2>
+          <p>
+            In an emergency, every second matters. Lifeline Ai quickly analyzes the situation and
+            gives you calm, clear instructions to follow — even when you’re far from help.
+          </p>
+          <ol class="how-steps">
+            <li>Open the app and point your camera at the scene.</li>
+            <li>Answer a few simple questions about the person’s condition.</li>
+            <li>Follow real-time voice and visual guidance until help arrives.</li>
+          </ol>
+        </div>
+
+        <div class="how-video">
+          <div class="video-card" id="demo-video-trigger" role="button" tabindex="0">
+            <div class="video-overlay">
+              <button class="play-button" aria-label="Play demo video">▶</button>
+            </div>
+            <div class="video-image">
+              <!-- Simple visual stand-in for the Canva mock (hiker giving first aid) -->
+              <div class="video-bg"></div>
+              <p class="video-caption">Watch how Lifeline Ai walks you through CPR on the trail.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2>Features</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">📷</div>
+            <h3>AI Camera</h3>
+            <p>Identify and assess medical emergencies with on-device computer vision.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📶</div>
+            <h3>Offline Mode</h3>
+            <p>Download modules for trips so guidance works even without a signal.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h3>Emergency Prep</h3>
+            <p>Train ahead of time with step-by-step interactive practice scenarios.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🩺</div>
+            <h3>Clinical Oversight</h3>
+            <p>Content reviewed regularly by practising paramedics and physicians.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING / PLANS -->
+    <section id="plans" class="plans">
+      <div class="container">
+        <h2>Choose the Lifeline Ai plan that’s right for you</h2>
+        <p class="section-subtitle">
+          Start your journey to smarter, safer first-aid guidance today.
+        </p>
+
+        <div class="billing-toggle" role="radiogroup" aria-label="Billing period">
+          <button class="toggle-btn active" data-billing="monthly">Monthly</button>
+          <button class="toggle-btn" data-billing="yearly">Yearly</button>
+        </div>
+
+        <div class="plan-grid">
+          <!-- Free Plan -->
+          <article class="plan-card">
+            <div class="plan-label plan-label-heart">Free Plan</div>
+            <p class="plan-price">
+              <span class="price-amount" data-plan="free" data-period="monthly">£0</span>
+              <span class="price-period">GBP / month</span>
+            </p>
+            <p class="plan-alt-price" data-plan="free">
+              or <span data-period="yearly">£0 GBP / year</span>
+            </p>
+            <ul class="plan-features">
+              <li>Basic AI guidance</li>
+              <li>1 offline module</li>
+              <li>Text-only feedback</li>
+            </ul>
+            <button class="btn btn-secondary plan-cta" data-plan-name="Free Plan">
+              Get Started Free
+            </button>
+          </article>
+
+          <!-- Individual Plan -->
+          <article class="plan-card">
+            <div class="plan-label">Individual Plan</div>
+            <p class="plan-price">
+              <span class="price-amount" data-plan="individual" data-period="monthly">£4.99</span>
+              <span class="price-period">GBP / month</span>
+            </p>
+            <p class="plan-alt-price" data-plan="individual">
+              or <span data-period="yearly">£49.99 GBP / year</span>
+            </p>
+            <ul class="plan-features">
+              <li>Full AI voice + visual guidance</li>
+              <li>All offline modules</li>
+            </ul>
+            <button class="btn btn-secondary plan-cta" data-plan-name="Individual Plan">
+              Subscribe
+            </button>
+          </article>
+
+          <!-- Family Plan -->
+          <article class="plan-card">
+            <div class="plan-label">Family Plan</div>
+            <p class="plan-price">
+              <span class="price-amount" data-plan="family" data-period="monthly">£9.99</span>
+              <span class="price-period">GBP / month</span>
+            </p>
+            <p class="plan-alt-price" data-plan="family">
+              or <span data-period="yearly">£99.99 GBP / year</span>
+            </p>
+            <ul class="plan-features">
+              <li>Up to 5 linked accounts</li>
+              <li>Shared emergency data</li>
+              <li>Family dashboard</li>
+            </ul>
+            <button class="btn btn-secondary plan-cta" data-plan-name="Family Plan">
+              Choose Plan
+            </button>
+          </article>
+
+          <!-- Premium Plan -->
+          <article class="plan-card plan-card-featured">
+            <div class="plan-ribbon">Recommended</div>
+            <div class="plan-label">Premium Plan</div>
+            <p class="plan-price">
+              <span class="price-amount" data-plan="premium" data-period="monthly">£14.99</span>
+              <span class="price-period">GBP / month</span>
+            </p>
+            <p class="plan-alt-price" data-plan="premium">
+              or <span data-period="yearly">£149.99 GBP / year</span>
+            </p>
+            <ul class="plan-features">
+              <li>Partner clinic access</li>
+              <li>Early AI updates</li>
+              <li>24/7 medical chat* (coming soon)</li>
+            </ul>
+            <button class="btn btn-primary plan-cta" data-plan-name="Premium Plan">
+              Start Free Trial
+            </button>
+          </article>
+        </div>
+
+        <p class="plans-footer">
+          All plans include access to medically reviewed first-aid content. Cancel anytime.
+        </p>
+      </div>
+    </section>
+
+    <!-- TERMS -->
+    <section id="terms" class="terms">
+      <div class="container terms-inner">
+        <h2>Terms &amp; Conditions</h2>
+        <p>Welcome to Lifeline Ai. Please review and accept our terms before continuing.</p>
+
+        <ol class="terms-list">
+          <li>
+            <h3>1. Acceptance of Terms</h3>
+            <p>
+              By using the Lifeline Ai app, you agree to comply with these terms. If you do not agree,
+              please discontinue use of the service.
+            </p>
+          </li>
+          <li>
+            <h3>2. User Responsibility</h3>
+            <p>
+              Lifeline Ai provides first-aid guidance, not medical advice. Always contact emergency
+              services when required.
+            </p>
+          </li>
+        </ol>
+
+        <a href="#full-terms" class="link">View Full Terms</a>
+
+        <button class="btn btn-primary" id="accept-terms-btn">Accept &amp; Continue</button>
+        <p class="terms-status" id="terms-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2>Get in touch with the Lifeline Ai team</h2>
+          <p>
+            We’re here to help — whether you’re looking for user support, partnership opportunities,
+            or press materials.
+          </p>
+
+          <ul class="contact-details">
+            <li>📧 <a href="mailto:support@lifeline.ai">support@lifeline.ai</a></li>
+            <li>📞 <a href="tel:+442071234567">+44 20 7123 4567</a></li>
+            <li>📍 London, UK</li>
+            <li>🕒 Mon–Fri, 9 am–6 pm (GMT)</li>
+          </ul>
+
+          <h3 class="contact-subheading">Connect with us</h3>
+          <ul class="social-links">
+            <li><a href="#" target="_blank">@lifeline.ai</a> on Instagram</li>
+            <li><a href="#" target="_blank">@lifeline.ai</a> on TikTok</li>
+            <li><a href="#" target="_blank">/lifelineai</a> on Facebook</li>
+            <li><a href="#" target="_blank">Lifeline Ai Ltd</a> on LinkedIn</li>
+            <li><a href="#" target="_blank">@lifeline_ai</a> on YouTube</li>
+          </ul>
+
+          <div class="testimonials">
+            <p><strong>“Clear, calm, and quick — it talked me through first aid on a trail.”</strong><br>
+              <span>Amelia T., Hiker</span></p>
+            <p><strong>“An essential app for anyone outdoors.”</strong><br>
+              <span>Dr. R. Patel, Paramedic</span></p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form id="contact-form">
+            <h3>Send us a message</h3>
+
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <input type="hidden" id="selected-plan" name="selectedPlan" value="" />
+
+            <button type="submit" class="btn btn-primary">Submit Message</button>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD CTA & FOOTER -->
+    <section id="download" class="download-cta">
+      <div class="container download-grid">
+        <div class="download-copy">
+          <h2>Get Lifeline Ai — Your Pocket Paramedic</h2>
+          <p>
+            Real-time first-aid guidance, anywhere, anytime — even offline.
+          </p>
+
+          <div class="store-buttons">
+            <a class="store-badge" href="https://apple.com/app-store/" target="_blank" rel="noreferrer">
+               Download on the App Store
+            </a>
+            <a class="store-badge" href="https://play.google.com" target="_blank" rel="noreferrer">
+              ▶ Get it on Google Play
+            </a>
+          </div>
+
+          <ul class="download-benefits">
+            <li>Offline Mode</li>
+            <li>Voice Guidance</li>
+            <li>Medical Verification</li>
+          </ul>
+
+          <p class="download-quote">
+            “It gave me calm, step-by-step guidance while hiking alone.”
+          </p>
+        </div>
+
+        <div class="download-phone">
+          <div class="phone phone-light">
+            <div class="phone-notch"></div>
+            <div class="phone-screen phone-screen-light">
+              <div class="phone-header">A¹ First Aid</div>
+              <div class="phone-instruction">
+                Elevate the legs above the heart level if possible.
+              </div>
+              <button class="mic-button" aria-label="Start voice guidance">
+                🎤
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <span>© 2025 Lifeline Ai — All rights reserved</span>
+          <div class="footer-links">
+            <a href="#terms">Terms</a>
+            <a href="#full-terms">Privacy</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Simple hidden anchor target for “View Full Terms / Privacy” -->
+  <div id="full-terms" aria-hidden="true"></div>
+
+  <!-- Video Modal -->
+  <div class="modal" id="video-modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Lifeline Ai demo video">
+      <button class="modal-close" id="video-modal-close" aria-label="Close video">×</button>
+      <div class="modal-body">
+        <!-- Replace the src with your own YouTube/Vimeo link if you have one -->
+        <div class="video-embed">
+          <iframe
+            id="demo-video"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Lifeline Ai demo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
