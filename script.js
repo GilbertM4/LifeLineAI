@@ -1,4 +1,39 @@
-// Mobile nav toggle
+// ----- Basic Page Switching -----
+
+const pages = document.querySelectorAll("[data-page]");
+const navLinks = document.querySelectorAll(".nav-link");
+
+// show one “page” and hide the rest
+function showPage(name) {
+  pages.forEach((section) => {
+    section.classList.toggle("active", section.dataset.page === name);
+  });
+
+  navLinks.forEach((link) => {
+    const target = link.dataset.pageTarget;
+    link.classList.toggle("active", target === name);
+  });
+
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+// hook up anything with data-page-target (nav items, buttons, footer links, logo)
+document.querySelectorAll("[data-page-target]").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = el.dataset.pageTarget;
+    if (!target) return;
+    showPage(target);
+
+    // close mobile menu if open
+    if (nav && nav.classList.contains("open")) {
+      nav.classList.remove("open");
+    }
+  });
+});
+
+// ----- Mobile nav toggle -----
+
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
 
@@ -6,32 +41,17 @@ if (menuToggle && nav) {
   menuToggle.addEventListener("click", () => {
     nav.classList.toggle("open");
   });
-
-  nav.addEventListener("click", (e) => {
-    if (e.target.tagName === "A") {
-      nav.classList.remove("open");
-    }
-  });
 }
 
-// Pricing toggle
+// ----- Pricing toggle -----
+
 const toggleButtons = document.querySelectorAll(".billing-toggle .toggle-btn");
 const priceAmounts = document.querySelectorAll(".price-amount");
 const planAltPrices = document.querySelectorAll(".plan-alt-price span[data-period]");
 
 const pricingTable = {
-  monthly: {
-    free: "£0",
-    individual: "£4.99",
-    family: "£9.99",
-    premium: "£14.99"
-  },
-  yearly: {
-    free: "£0",
-    individual: "£49.99",
-    family: "£99.99",
-    premium: "£149.99"
-  }
+  monthly: { free: "£0", individual: "£4.99", family: "£9.99", premium: "£14.99" },
+  yearly: { free: "£0", individual: "£49.99", family: "£99.99", premium: "£149.99" }
 };
 
 toggleButtons.forEach((btn) => {
@@ -41,17 +61,14 @@ toggleButtons.forEach((btn) => {
     toggleButtons.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
 
-    // Update main price
     priceAmounts.forEach((el) => {
       const plan = el.dataset.plan;
       el.textContent = pricingTable[period][plan];
     });
 
-    // Update small alt price text
     planAltPrices.forEach((el) => {
       const parentPlan = el.closest(".plan-alt-price").dataset.plan;
       if (period === "monthly") {
-        // show yearly price text in alt label
         el.textContent = `${pricingTable.yearly[parentPlan]} GBP / year`;
       } else {
         el.textContent = `${pricingTable.monthly[parentPlan]} GBP / month`;
@@ -60,7 +77,8 @@ toggleButtons.forEach((btn) => {
   });
 });
 
-// Plan buttons scroll & record choice
+// ----- Plan buttons -> Contact page & pre-fill hidden input -----
+
 const planButtons = document.querySelectorAll(".plan-cta");
 const selectedPlanInput = document.getElementById("selected-plan");
 
@@ -68,15 +86,12 @@ planButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const planName = btn.dataset.planName || "";
     if (selectedPlanInput) selectedPlanInput.value = planName;
-
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
+    showPage("contact");
   });
 });
 
-// Terms acceptance
+// ----- Terms acceptance -----
+
 const acceptTermsBtn = document.getElementById("accept-terms-btn");
 const termsStatus = document.getElementById("terms-status");
 
@@ -86,7 +101,8 @@ if (acceptTermsBtn && termsStatus) {
   });
 }
 
-// Contact form fake submit
+// ----- Contact form (fake submit) -----
+
 const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 
@@ -99,17 +115,16 @@ if (contactForm && formStatus) {
     const plan = formData.get("selectedPlan");
 
     let message = `Thanks, ${name}! We’ve received your message and will get back to you soon.`;
-    if (plan) {
-      message += ` We’ll also include details on the ${plan}.`;
-    }
+    if (plan) message += ` We’ll also include details on the ${plan}.`;
 
     formStatus.textContent = message;
     contactForm.reset();
-    selectedPlanInput.value = "";
+    if (selectedPlanInput) selectedPlanInput.value = "";
   });
 }
 
-// Video modal
+// ----- Video modal -----
+
 const videoTrigger = document.getElementById("demo-video-trigger");
 const videoModal = document.getElementById("video-modal");
 const videoClose = document.getElementById("video-modal-close");
@@ -125,10 +140,9 @@ const closeModal = () => {
   if (!videoModal) return;
   videoModal.classList.remove("open");
   videoModal.setAttribute("aria-hidden", "true");
-  // Stop video playback by resetting src
   if (videoIframe) {
     const src = videoIframe.getAttribute("src");
-    videoIframe.setAttribute("src", src);
+    videoIframe.setAttribute("src", src); // reset to stop video
   }
 };
 
@@ -154,14 +168,6 @@ if (videoModal) {
   });
 }
 
-// Make hero download button scroll to download section (in case user changes ID)
-const heroDownloadBtn = document.getElementById("hero-download-btn");
-if (heroDownloadBtn) {
-  heroDownloadBtn.addEventListener("click", (e) => {
-    // let normal anchor behaviour handle if href is #download
-    const href = heroDownloadBtn.getAttribute("href");
-    if (href && href.startsWith("#")) {
-      // nothing extra
-    }
-  });
-}
+// ----- Default page on load -----
+
+showPage("home");
