@@ -1,3 +1,4 @@
+console.log("✅ script.js is loaded");
 // ----- Basic Page Switching -----
 
 const pages = document.querySelectorAll("[data-page]");
